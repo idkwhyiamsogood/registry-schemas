@@ -7,6 +7,10 @@
         "$schema": {
           "type": "string"
         },
+        "basePath": {
+          "type": "string",
+          "default": "."
+        },
         "registry": {
           "type": "string"
         },
@@ -30,6 +34,15 @@
                   },
                   "path": {
                     "type": "string"
+                  },
+                  "sourcePath": {
+                    "type": "string"
+                  },
+                  "aliases": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "string"
+                    }
                   }
                 },
                 "required": [
@@ -48,6 +61,12 @@
                   "url": {
                     "type": "string",
                     "minLength": 1
+                  },
+                  "sourcePath": {
+                    "$ref": "#/definitions/ConfigSchema/properties/registries/additionalProperties/anyOf/0/properties/sourcePath"
+                  },
+                  "aliases": {
+                    "$ref": "#/definitions/ConfigSchema/properties/registries/additionalProperties/anyOf/0/properties/aliases"
                   }
                 },
                 "required": [
@@ -58,17 +77,8 @@
               }
             ]
           }
-        },
-        "aliases": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
         }
       },
-      "required": [
-        "aliases"
-      ],
       "additionalProperties": false
     }
   },
