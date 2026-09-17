@@ -28,6 +28,9 @@
                   "ref": {
                     "type": "string"
                   },
+                  "path": {
+                    "type": "string"
+                  },
                   "aliases": {
                     "type": "object",
                     "additionalProperties": {
@@ -62,12 +65,16 @@
                     "additionalProperties": {
                       "type": "string"
                     }
+                  },
+                  "sourcePath": {
+                    "type": "string"
                   }
                 },
                 "required": [
                   "type",
                   "url",
-                  "aliases"
+                  "aliases",
+                  "sourcePath"
                 ],
                 "additionalProperties": false
               }
