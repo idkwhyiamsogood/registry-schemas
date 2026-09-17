@@ -7,7 +7,7 @@
         "$schema": {
           "type": "string"
         },
-        "sourcePath": {
+        "name": {
           "type": "string"
         },
         "aliases": {
@@ -18,6 +18,7 @@
         }
       },
       "required": [
+        "name",
         "aliases"
       ],
       "additionalProperties": false

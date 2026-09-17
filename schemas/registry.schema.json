@@ -7,9 +7,6 @@
         "$schema": {
           "type": "string"
         },
-        "name": {
-          "type": "string"
-        },
         "modules": {
           "type": "object",
           "additionalProperties": {
@@ -26,7 +23,13 @@
                   },
                   "layer": {
                     "type": "string",
-                    "minLength": 1
+                    "enum": [
+                      "api",
+                      "modules",
+                      "services",
+                      "shared",
+                      "entities"
+                    ]
                   },
                   "type": {
                     "type": "string",
@@ -108,7 +111,6 @@
         }
       },
       "required": [
-        "name",
         "modules"
       ],
       "additionalProperties": false

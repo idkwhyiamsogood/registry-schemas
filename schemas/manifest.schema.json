@@ -9,7 +9,13 @@
         },
         "layer": {
           "type": "string",
-          "minLength": 1
+          "enum": [
+            "api",
+            "modules",
+            "services",
+            "shared",
+            "entities"
+          ]
         },
         "type": {
           "type": "string",

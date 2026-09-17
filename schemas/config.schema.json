@@ -8,10 +8,6 @@
           "type": "string"
         },
         "basePath": {
-          "type": "string",
-          "default": "."
-        },
-        "registry": {
           "type": "string"
         },
         "registries": {
@@ -32,22 +28,21 @@
                   "ref": {
                     "type": "string"
                   },
-                  "path": {
-                    "type": "string"
-                  },
-                  "sourcePath": {
-                    "type": "string"
-                  },
                   "aliases": {
                     "type": "object",
                     "additionalProperties": {
                       "type": "string"
                     }
+                  },
+                  "sourcePath": {
+                    "type": "string"
                   }
                 },
                 "required": [
                   "type",
-                  "url"
+                  "url",
+                  "aliases",
+                  "sourcePath"
                 ],
                 "additionalProperties": false
               },
@@ -62,23 +57,30 @@
                     "type": "string",
                     "minLength": 1
                   },
-                  "sourcePath": {
-                    "$ref": "#/definitions/ConfigSchema/properties/registries/additionalProperties/anyOf/0/properties/sourcePath"
-                  },
                   "aliases": {
-                    "$ref": "#/definitions/ConfigSchema/properties/registries/additionalProperties/anyOf/0/properties/aliases"
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "string"
+                    }
                   }
                 },
                 "required": [
                   "type",
-                  "url"
+                  "url",
+                  "aliases"
                 ],
                 "additionalProperties": false
               }
             ]
           }
+        },
+        "registry": {
+          "type": "string"
         }
       },
+      "required": [
+        "basePath"
+      ],
       "additionalProperties": false
     }
   },
