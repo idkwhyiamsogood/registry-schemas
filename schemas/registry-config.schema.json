@@ -15,6 +15,13 @@
           "additionalProperties": {
             "type": "string"
           }
+        },
+        "params": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "default": {}
         }
       },
       "required": [
