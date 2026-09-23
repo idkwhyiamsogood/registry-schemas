@@ -18,10 +18,27 @@
         },
         "params": {
           "type": "object",
-          "additionalProperties": {
-            "type": "string"
+          "properties": {
+            "default": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              },
+              "default": {}
+            },
+            "integrated": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              },
+              "default": {}
+            }
           },
-          "default": {}
+          "additionalProperties": false,
+          "default": {
+            "default": {},
+            "integrated": {}
+          }
         }
       },
       "required": [
