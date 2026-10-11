@@ -10,31 +10,50 @@
         "name": {
           "type": "string"
         },
+        "description": {
+          "type": "string"
+        },
+        "generator": {
+          "type": "object",
+          "properties": {
+            "command": {
+              "type": "string",
+              "minLength": 1
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "default": []
+            }
+          },
+          "required": [
+            "command"
+          ],
+          "additionalProperties": false
+        },
+        "params": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
         "dependencies": {
           "type": "object",
           "properties": {
             "external": {
-              "type": "object",
-              "properties": {
-                "command": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "command"
-              ],
-              "additionalProperties": false
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             }
           },
-          "required": [
-            "external"
-          ],
           "additionalProperties": false
         }
       },
       "required": [
-        "name",
-        "dependencies"
+        "name"
       ],
       "additionalProperties": false
     }
