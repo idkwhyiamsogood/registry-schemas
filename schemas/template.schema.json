@@ -33,6 +33,25 @@
           ],
           "additionalProperties": false
         },
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "source": {
+                "type": "string"
+              },
+              "targetName": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "source"
+            ],
+            "additionalProperties": false
+          },
+          "default": []
+        },
         "params": {
           "type": "object",
           "additionalProperties": {
