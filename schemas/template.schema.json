@@ -14,67 +14,35 @@
           "type": "string"
         },
         "generator": {
-          "anyOf": [
-            {
-              "type": "object",
-              "properties": {
-                "command": {
-                  "type": "string",
-                  "minLength": 1
-                },
-                "args": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  },
-                  "default": []
-                },
-                "cwd": {
-                  "type": "string",
-                  "enum": [
-                    "parent",
-                    "project"
-                  ],
-                  "default": "parent"
-                }
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "command": {
+                "type": "string",
+                "minLength": 1
               },
-              "required": [
-                "command"
-              ],
-              "additionalProperties": false
-            },
-            {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "command": {
-                    "type": "string",
-                    "minLength": 1
-                  },
-                  "args": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    },
-                    "default": []
-                  },
-                  "cwd": {
-                    "type": "string",
-                    "enum": [
-                      "parent",
-                      "project"
-                    ],
-                    "default": "parent"
-                  }
+              "args": {
+                "type": "array",
+                "items": {
+                  "type": "string"
                 },
-                "required": [
-                  "command"
+                "default": []
+              },
+              "cwd": {
+                "type": "string",
+                "enum": [
+                  "parent",
+                  "project"
                 ],
-                "additionalProperties": false
+                "default": "parent"
               }
-            }
-          ]
+            },
+            "required": [
+              "command"
+            ],
+            "additionalProperties": false
+          }
         },
         "params": {
           "type": "object",
